@@ -15,7 +15,7 @@ func main() {
 	valut2 := UserInput_endValut(valut1)
 	fmt.Println(valut2)
 	kurs := calculate(v_count, valut1, valut2)
-	fmt.Println(kurs)
+	fmt.Println("После обмена ", valut1, " на ", valut2, "вы получите: ", kurs)
 
 }
 
@@ -40,7 +40,7 @@ func calculate(count_valut float64, start_valut string, final_valut string) floa
 
 	case start_valut == "USD":
 		if final_valut == "EUR" {
-			summ_new_valut = count_valut * kurs_EUR_to_RUB
+			summ_new_valut = count_valut * USD_to_EUR
 		} else {
 			summ_new_valut = count_valut * USD_to_RUB
 		}
