@@ -32,10 +32,10 @@ func calculate(count_valut float64, start_valut string, final_valut string) floa
 		return summ_new_valut
 	case start_valut == "RUB":
 		if final_valut == "EUR" {
-			summ_new_valut = count_valut * kurs_EUR_to_RUB
+			summ_new_valut = count_valut / kurs_EUR_to_RUB
 			return summ_new_valut
 		} else {
-			summ_new_valut = count_valut * USD_to_RUB
+			summ_new_valut = count_valut / USD_to_RUB
 		}
 
 	case start_valut == "USD":
@@ -84,7 +84,7 @@ func Vvod_count_valut() float64 {
 func UserInput_endValut(nachvalut string) string {
 	var valuta string
 	for {
-		fmt.Print("Введите исходную валюту(RUB, EUR или USD): ")
+		fmt.Print("Введите целевую валюту: ")
 		fmt.Scan(&valuta)
 
 		if valuta == "EUR" && valuta != nachvalut || valuta == "RUB" && valuta != nachvalut || valuta == "USD" && valuta != nachvalut {
